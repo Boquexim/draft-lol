@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color: #0e0e0e;
     font-family: Arial, sans-serif;
+    color: white;
 }
 #draft-container {
     width: 1920px;
@@ -17,17 +18,21 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
-.bans, .picks {
+.picks {
     display: flex;
     gap: 10px;
 }
-.bans div, .picks div {
+.pick {
     width: 80px;
     height: 80px;
     background-color: #222;
-    border: 2px solid #444;
+    border: 2px solid #888;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #center-section {
     width: 200px;
