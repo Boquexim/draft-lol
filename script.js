@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const redPicks = document.getElementById("red-picks");
 
     function renderPicks() {
-        const picks = JSON.parse(localStorage.getItem("picks")) || { blue: [], red: [] };
+        const picks = JSON.parse(sessionStorage.getItem("picks")) || { blue: [], red: [] };
 
         bluePicks.innerHTML = "";
         redPicks.innerHTML = "";

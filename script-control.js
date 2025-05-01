@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
         el.className = "champion-tile";
         el.textContent = champ;
         el.onclick = () => {
-            const picks = JSON.parse(localStorage.getItem("picks")) || { blue: [], red: [] };
+            const picks = JSON.parse(sessionStorage.getItem("picks")) || { blue: [], red: [] };
             const team = turn % 2 === 0 ? "blue" : "red";
             if (picks[team].length < 5) {
                 picks[team].push(champ);
-                localStorage.setItem("picks", JSON.stringify(picks));
+                sessionStorage.setItem("picks", JSON.stringify(picks));
                 turn++;
             }
         };
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (confirmBtn) {
         confirmBtn.onclick = () => {
-            localStorage.setItem("lastAction", Date.now());
+            sessionStorage.setItem("lastAction", Date.now());
         };
     }
 
     if (resetBtn) {
-        localStorage.clear();
+        sessionStorage.clear();
         location.reload();
     }
 });
